@@ -1,0 +1,12 @@
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\ConsoleApplication10\bin\Debug\Spheniscidae.exe.config
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\ConsoleApplication10\bin\Debug\Spheniscidae.exe
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\ConsoleApplication10\bin\Debug\Spheniscidae.pdb
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\ConsoleApplication10\obj\Debug\Spheniscidae.csprojResolveAssemblyReference.cache
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\ConsoleApplication10\obj\Debug\Spheniscidae.exe
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\ConsoleApplication10\obj\Debug\Spheniscidae.pdb
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\Spheniscidae\bin\Debug\Spheniscidae.exe.config
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\Spheniscidae\obj\Debug\Spheniscidae.exe
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\Spheniscidae\obj\Debug\Spheniscidae.pdb
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\Spheniscidae\bin\Debug\Spheniscidae.exe
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\Spheniscidae\bin\Debug\Spheniscidae.pdb
+C:\Users\McKay\Documents\Visual Studio 2012\Projects\Spheniscidae\obj\Debug\Spheniscidae.csprojResolveAssemblyReference.cache
