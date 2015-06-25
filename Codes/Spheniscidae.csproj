@@ -42,9 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bookmark.cs" />
-    <Compile Include="Storage.cs" />
-    <Compile Include="WorkflowContext.cs" />
+    <Compile Include="Activities\DoneActivity.cs" />
+    <Compile Include="Activities\发送拒绝通知消息Activity.cs" />
+    <Compile Include="Activities\发送同意通知消息Activity.cs" />
+    <Compile Include="Activities\开发经理处理请假Activity.cs" />
+    <Compile Include="Activities\申请请假Activity.cs" />
+    <Compile Include="BusinessLogic\开发经理Manager.cs" />
+    <Compile Include="Framework\Bookmark.cs" />
+    <Compile Include="Framework\IActivity.cs" />
+    <Compile Include="Framework\Storage.cs" />
+    <Compile Include="BusinessLogic\Factory.cs" />
+    <Compile Include="BusinessLogic\开发人员Manager.cs" />
+    <Compile Include="Framework\WorkflowContext.cs" />
+    <Compile Include="Infrastructure\MessageBus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

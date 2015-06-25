@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Spheniscidae.Activities;
+using Spheniscidae.Framework;
+using Spheniscidae.BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +12,12 @@ namespace Spheniscidae
 {
     class Program
     {
+        private static 申请请假Activity 申请请假 = new 申请请假Activity();
+        private static 发送拒绝通知消息Activity 发送拒绝通知消息 = new 发送拒绝通知消息Activity();
+        private static 发送同意通知消息Activity 发送同意通知消息 = new 发送同意通知消息Activity();
+        private static 开发经理处理请假Activity 开发经理处理请假 = new 开发经理处理请假Activity();
+        private static DoneActivity Done = new DoneActivity();
+
         static void Main(string[] args)
         {
             if (Storage.IsPersisted())
@@ -22,12 +31,12 @@ namespace Spheniscidae
                 NewBookmarkInit();
             }
 
-            string[] steps = { "step1", "step2", "step3" };
+            string[] steps = { "程序员提出请假申请", "开发经理处理", "同意", "不同意", "[Done]" };
 
             while(true)
             {
                 Random r = new Random();
-                string step = steps[r.Next(0, 2)];
+                string step = steps[r.Next(0, 4)];
 
                 Console.WriteLine("当前会从{0}开始执行-{1}", step, DateTime.Now.ToString());
 
@@ -44,50 +53,39 @@ namespace Spheniscidae
         {
             Bookmark mk1 = new Bookmark()
             {
-                BookmarkName = "step1",
-                Resumed = Step1
+                BookmarkName = "程序员提出请假申请",
+                Resumed = 申请请假.Execute
             };
 
             Bookmark mk2 = new Bookmark()
             {
-                BookmarkName = "step2",
-                Resumed = Step2
+                BookmarkName = "开发经理处理",
+                Resumed = 开发经理处理请假.Execute
             };
 
             Bookmark mk3 = new Bookmark()
             {
-                BookmarkName = "step3",
-                Resumed = Step3
+                BookmarkName = "同意",
+                Resumed = 发送同意通知消息.Execute
+            };
+
+            Bookmark mk4 = new Bookmark()
+            {
+                BookmarkName = "不同意",
+                Resumed = 发送拒绝通知消息.Execute
+            };
+
+            Bookmark done = new Bookmark()
+            {
+                BookmarkName = "[Done]",
+                Resumed = Done.Execute
             };
 
             WorkflowContext.Add(mk1);
             WorkflowContext.Add(mk2);
             WorkflowContext.Add(mk3);
-        }
-
-        static void Step1(Bookmark bookmark)
-        {
-            Console.WriteLine("*************Step1***********");
-            Console.WriteLine(string.Format("类型：{0}     值：{1}", bookmark.Payload.GetType().FullName, bookmark.Payload.ToString()));
-
-            WorkflowContext.Execute("step2", "this is a test[step2]");
-        }
-
-        static void Step2(Bookmark bookmark)
-        {
-            Console.WriteLine("*************Step2***********");
-            Console.WriteLine(string.Format("类型：{0}     值：{1}", bookmark.Payload.GetType().FullName, bookmark.Payload.ToString()));
-
-            Console.WriteLine("单击，进入步骤3");
-            Console.ReadKey();
-
-            WorkflowContext.Execute("step3", "this is a test[step3]");
-        }
-
-        static void Step3(Bookmark bookmark)
-        {
-            Console.WriteLine("*************Step3***********");
-            Console.WriteLine(string.Format("类型：{0}     值：{1}", bookmark.Payload.GetType().FullName, bookmark.Payload.ToString()));
+            WorkflowContext.Add(mk4);
+            WorkflowContext.Add(done);
         }
     }
 }

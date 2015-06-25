@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Spheniscidae
+namespace Spheniscidae.Framework
 {
     public class WorkflowContext
     {

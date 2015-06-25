@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Spheniscidae
+namespace Spheniscidae.Framework
 {
     [Serializable]
     public delegate void BookmarkLocation(Bookmark bookmark);
